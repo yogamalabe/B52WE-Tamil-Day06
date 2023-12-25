@@ -23,8 +23,11 @@ request.onload=function(){
        console.log(totalpop);
 
   //E)Print the country which uses US Dollars as currency
-    //var arr=result.map(ele=>ele.currencies);
-    //console.log(arr);
-
+    console.log(
+        result.filter((cty)=>{
+            const { currencies = {} } = cty;
+            return Object.keys(currencies).includes("USD");
+        })
+);
 }
 
